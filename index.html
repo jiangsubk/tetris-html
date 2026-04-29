@@ -182,38 +182,38 @@ body {
   <div class="board-container">
     <canvas id="gameCanvas"></canvas>
     <div class="overlay" id="gameOverlay">
-      <h1 id="overlayTitle">GAME OVER</h1>
-      <p id="overlaySub">Score: 0</p>
+      <h1 id="overlayTitle">游戏结束</h1>
+      <p id="overlaySub">得分: 0</p>
       <button class="restart-btn" id="restartBtn">重新开始 R</button>
     </div>
   </div>
 
   <div class="side-panel">
     <div class="panel-box">
-      <div class="label">Score</div>
+      <div class="label">得分</div>
       <div class="value" id="scoreDisplay">0</div>
     </div>
     <div class="panel-box">
-      <div class="label">Level</div>
+      <div class="label">等级</div>
       <div class="value" id="levelDisplay">1</div>
     </div>
     <div class="panel-box">
-      <div class="label">Lines</div>
+      <div class="label">行数</div>
       <div class="value" id="linesDisplay">0</div>
     </div>
     <div class="panel-box preview-box">
-      <div class="label">Next</div>
+      <div class="label">下一个</div>
       <canvas id="nextCanvas"></canvas>
     </div>
     <div class="panel-box preview-box">
-      <div class="label">Hold</div>
+      <div class="label">暂存</div>
       <canvas id="holdCanvas"></canvas>
     </div>
 
     <div class="controls">
-      <kbd>←</kbd><kbd>→</kbd> Move &nbsp; <kbd>↑</kbd> Rotate<br>
-      <kbd>↓</kbd> Soft drop &nbsp; <kbd>Space</kbd> Hard drop<br>
-      <kbd>C</kbd> Hold &nbsp; <kbd>P</kbd> Pause &nbsp; <kbd>R</kbd> Restart
+      <kbd>←</kbd><kbd>→</kbd> 移动 &nbsp; <kbd>↑</kbd> 旋转<br>
+      <kbd>↓</kbd> 下落 &nbsp; <kbd>空格</kbd> 直落<br>
+      <kbd>C</kbd> 暂存 &nbsp; <kbd>P</kbd> 暂停 &nbsp; <kbd>R</kbd> 重开
     </div>
 
     <div class="touch-controls">
@@ -542,12 +542,12 @@ function draw(game) {
   // 暂停/游戏结束覆盖层
   if (game.gameOver) {
     overlay.classList.add('show');
-    overlayTitle.textContent = 'GAME OVER';
-    overlaySub.textContent = `Score: ${game.score}`;
+    overlayTitle.textContent = '游戏结束';
+    overlaySub.textContent = `得分: ${game.score}`;
   } else if (game.paused) {
     overlay.classList.add('show');
-    overlayTitle.textContent = 'PAUSED';
-    overlaySub.textContent = 'Press P to continue';
+    overlayTitle.textContent = '已暂停';
+    overlaySub.textContent = '按 P 继续';
   } else {
     overlay.classList.remove('show');
   }
